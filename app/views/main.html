@@ -112,7 +112,7 @@
         </div>
 
         <div id="domain-list" class="list-group">
-          <a href="" ng-repeat="domain in domains" class="list-group-item">
+          <a href="#/records/{{domain.name}}" ng-repeat="domain in domains" class="list-group-item">
             <h4 class="list-group-item-heading">{{domain.name}}</h4>
             <p class="list-group-item-text"><i>Last updated: {{domain.updated_at | date: "medium"}}</i> <button class="btn btn-square btn-danger btn-xs pull-right"><span class="fa fa-trash-o"></span> REMOVE</button></p>
           </a>

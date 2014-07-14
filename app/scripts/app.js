@@ -23,6 +23,10 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/records/:domain', {
+        templateUrl: 'views/records.html',
+        controller: 'RecordsCtrl'
+      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
@@ -32,4 +36,5 @@ angular
       });
   }).config(function(RestangularProvider){
     RestangularProvider.setBaseUrl('http://localhost:8080');
+    RestangularProvider.setDefaultHttpFields({cache: true});
   });
