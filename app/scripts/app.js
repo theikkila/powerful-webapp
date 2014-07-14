@@ -13,7 +13,9 @@ angular
     'ngAnimate',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'countTo',
+    'restangular'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,4 +30,6 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  }).config(function(RestangularProvider){
+    RestangularProvider.setBaseUrl('http://localhost:8080');
   });
