@@ -61,3 +61,7 @@ margin-bottom: 0;
 #domain-list{
   margin-top: 10px;
 }
+.wideclick{
+  width: 90%;
+  display: inline-block;
+}

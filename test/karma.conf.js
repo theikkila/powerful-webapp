@@ -26,6 +26,7 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/lodash/dist/lodash.compat.js',
       'bower_components/restangular/dist/restangular.js',
+      'bower_components/ng-table/ng-table.js',
       'bower_components/angular-count-to/index.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',

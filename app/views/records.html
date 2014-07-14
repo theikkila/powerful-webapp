@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-body">
+        <h1 class="grapefruit">{{domain.name}}</h1>
+        <a href="#">Dasboard</a> / {{domain.name}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-body">
+        <h1 class="grapefruit">Statistics</h1>
+        <h1><span class="count" count-to="{{records.length}}" value="0" duration="0.2">-</span><small> records </small></h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel">
+      <div class="panel-body">
+        <h1 class="grapefruit">Records</h1>
+        <label>EDIT</label><br>
+<div class="switch-toggle switch-candy col-md-1">
+  <input id="on" name="view" ng-model="editmode" ng-value="true" type="radio" checked>
+  <label for="on" onclick="">I</label>
+
+  <input id="off" name="view" ng-model="editmode" ng-value="false" type="radio">
+  <label for="off" onclick="">O</label>
+
+  <a></a>
+</div>
+        <table ng-table="tableParams" class="table table-striped">
+          <tbody ng-repeat="group in domain.records">
+            <tr class="ng-table-group">
+              <td colspan="{{$columns.length}}">
+                <a href="" ng-click="group.$hideRows = !group.$hideRows">
+
+                  <strong class="wideclick"><span class="fa" ng-class="{'fa-chevron-right': !group.$hideRows, 'fa-chevron-down': group.$hideRows}"></span> {{ group.type }}</strong>
+                </td>
+              </tr>
+              <tr ng-show="group.$hideRows" ng-repeat="record in group.records">
+                <td class="col-md-3">
+                  <span ng-if="!editmode">{{record.name}}</span>
+                  <input class="form-control input-sm" ng-if="editmode" placeholder="name" ng-model="record.name"/>
+                </td>
+                <td class="col-md-1">{{record.type}}</td>
+                <td>
+                  <span ng-if="!editmode">{{record.content}}</span>
+                  <input class="form-control input-sm" ng-if="editmode" placeholder="content" ng-model="record.content"/>
+                </td>
+                <td class="col-md-1">
+                  <span ng-if="!editmode">{{record.ttl}}</span>
+                  <input class="form-control input-sm" ng-if="editmode" placeholder="ttl" ng-model="record.ttl"/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

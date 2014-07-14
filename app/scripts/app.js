@@ -15,7 +15,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'countTo',
-    'restangular'
+    'restangular',
+    'ngTable'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -35,6 +36,6 @@ angular
         redirectTo: '/'
       });
   }).config(function(RestangularProvider){
-    RestangularProvider.setBaseUrl('http://localhost:8080');
+    RestangularProvider.setBaseUrl('http://192.168.1.102:8080');
     RestangularProvider.setDefaultHttpFields({cache: true});
   });
